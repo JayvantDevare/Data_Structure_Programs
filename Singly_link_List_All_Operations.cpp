@@ -7,27 +7,26 @@
     6.Delete a Particular Node from List
     7.Search Element in the List
     8.Reverse List
-    9.Display List Data
-*/
-#include<iostream>	//Header file
+    9.Display List Data*/
+#include<iostream>//Header file
 #include<cstdio>
 #include<cstdlib>
 using namespace std;
-class Node		//class Node for creating node		
+class Node//class Node for creating node		
 {
     public:
 	int data;
-    	Node *next;				//next pointer which will point to the next node into the list
+    	Node *next;//next pointer which will point to the next node into the list
 }; 
-class Singly_Linked_List	//class for singly linked list operations
+class Singly_Linked_List//class for singly linked list operations
 {
     public:
-    	Node* Head;			//pointer to point first node of the list     	
+    	Node* Head;//pointer to point first node of the list     	
     	Singly_Linked_List() 
         {
             Head = NULL;
         }        
-        Node* create_node(int Value);			//operations on SLL
+        Node* create_node(int Value);//operations on SLL
         void insert_at_begin();
         void insert_at_position();
         void insert_at_last(); 
@@ -37,14 +36,12 @@ class Singly_Linked_List	//class for singly linked list operations
         void updateData();
         void reverseList();
         void displayList();        
-};
- 
+}; 
  // 1. Function for Creating Node
-
 Node* Singly_Linked_List::create_node(int value)
 {
     Node* newnode;
-    newnode = new Node(); 		//creating node
+    newnode = new Node();//creating node
     if (newnode == NULL)
     {
         cout<<"Memory not allocated for the New Node"<<endl;
@@ -56,7 +53,7 @@ Node* Singly_Linked_List::create_node(int value)
         newnode->next = NULL;     
         return newnode;
     }
-}	//end of create_node(int) function
+}//end of create_node(int) function
 // 2. Function for Inserting Node into the List at Begining
 void Singly_Linked_List::insert_at_begin()
 {
@@ -65,13 +62,13 @@ void Singly_Linked_List::insert_at_begin()
     cin>>value;
     Node* newnode;
     Node* temp;
-    newnode = create_node(value);			//calling create_node(int) function
-    if (Head == NULL)				     	// if list is empty 
+    newnode = create_node(value);//calling create_node(int) function
+    if (Head == NULL)// if list is empty 
     {
         Head = newnode;
         Head->next = NULL;          
     } 
-    else							       //if list containse one or more nodes
+    else//if list containse one or more nodes
     {
         temp = Head;
         Head = newnode;
@@ -130,7 +127,7 @@ void Singly_Linked_List::insert_at_position()
         cout<<"Invalid Positon!!!! "<<endl;
     }
 }//end of insert_at_postion() function
- //4. fucntion for inserting node at last
+//4. fucntion for inserting node at last
 void Singly_Linked_List::insert_at_last()
 {
     int value;
@@ -148,7 +145,7 @@ void Singly_Linked_List::insert_at_last()
     trav->next = newnode;
     cout<<"Element Inserted at last"<<endl;  
 }//end of insert_at_last() function
- //5.function for sorting given list
+//5.function for sorting given list
 void Singly_Linked_List::sortList()
 {
     Node* trav;
@@ -202,7 +199,7 @@ void Singly_Linked_List::searchData()
     if (!flag)
         cout<<"Element"<<value<<"not found in the list"<<endl;  
 }// end of searchData() function
- //7. function for Updating data of the node from the List
+//7. function for Updating data of the node from the List
 void Singly_Linked_List::updateData()
 {
     int value;
@@ -334,7 +331,7 @@ int main()
 {
     int choice;
     int i;
-    Singly_Linked_List sl;  //creating object of list class
+    Singly_Linked_List sl;//creating object of list class
     do 
     {
         cout<<endl<<"********************************"<<endl;
